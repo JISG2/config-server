@@ -1,0 +1,18 @@
+server:  
+  port: 8059
+ 
+spring:
+  application:
+    name: profesoresCliente
+ 
+eureka:  
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+ 
+microservicio:
+  contact:
+    name: api-gateway
+    findAllUrl: http://${microservicio.contact.name}/profesores
+    saveUrl: http://${microservicio.contact.name}/profesores
+    deleteUrl: http://${microservicio.contact.name}/profesores/{id}
